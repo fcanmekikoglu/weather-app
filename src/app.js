@@ -5,6 +5,7 @@ const geocode = require ('./utils/geocode')
 const forecast = require ('./utils/forecast')
 
 const app = express() //to get app. functioınality
+const port = process.env.PORT || 3000
 
 //Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public') //to access root
@@ -102,7 +103,7 @@ app.get('*', (req, res) => {
     })
 })
 //Start server
-app.listen(3000, ()=>{
-    console.log('Server initialized on port 3000.')
+app.listen(port, ()=>{
+    console.log('Server initialized on port ' + port +'.')
 })
 
